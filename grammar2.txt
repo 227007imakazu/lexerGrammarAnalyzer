@@ -1,0 +1,16 @@
+Program' → Program
+Program → Functions
+Functions → Function | Function Functions
+Function → Type ID '(' Params ')' Block
+Params → ε | ParamList
+ParamList → Param | Param ',' ParamList
+Param → Type ID
+Type → 'int' | 'float' | 'complex' | 'string'
+Block → '{' Statements '}'
+Statements → ε | Statement Statements
+Statement → Declare | Return
+Declare → Type ID ';' | Type ID '=' Expr ';'
+Return → 'return' Expr ';'
+Expr → Term
+Term → Factor
+Factor → ID | CONSTANT | '(' Expr ')'
